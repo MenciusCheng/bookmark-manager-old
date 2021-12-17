@@ -1,0 +1,13 @@
+[server]
+	service_name="bookmark.service"
+	port = 8080
+
+[log]
+	level="debug"
+	logpath="logs"
+	rotate="hour"
+
+[[database]]
+  name="bookmark_manager"
+  master="root:root@tcp(127.0.0.1:3306)/bookmark_manager?charset=utf8mb4&parseTime=true&loc=Local&readTimeout=2s"
+  slaves=["root:root@tcp(127.0.0.1:3306)/bookmark_manager?charset=utf8mb4&parseTime=true&loc=Local&readTimeout=2s"]
