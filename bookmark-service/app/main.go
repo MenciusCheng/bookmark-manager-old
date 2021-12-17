@@ -22,6 +22,13 @@ func init() {
 	)
 }
 
+// @title 书签服务
+// @version 1.0
+// @description 书签服务相关接口
+// @host 127.0.0.1:8080
+// @BasePath /
+// @accept json
+// @produce json
 func main() {
 
 	defer dragons.Shutdown()

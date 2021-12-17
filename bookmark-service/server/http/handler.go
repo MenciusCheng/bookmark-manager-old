@@ -24,6 +24,12 @@ func createLink(c *gin.Context) {
 	c.JSON(200, okMsg)
 }
 
+// getLinkList godoc
+// @summary 查询书签列表
+// @description 查询书签列表
+// @tags link
+// @router /api/link/list [get]
+// @success 200 {array} model.Link
 func getLinkList(c *gin.Context) {
 	resp, err := svc.GetLinkList(context.Background())
 	if err != nil {

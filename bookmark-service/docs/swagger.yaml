@@ -1,0 +1,40 @@
+basePath: /
+consumes:
+- application/json
+definitions:
+  model.Link:
+    properties:
+      createdAt:
+        type: string
+      icon:
+        type: string
+      name:
+        type: string
+      updatedAt:
+        type: string
+      url:
+        type: string
+    type: object
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: 书签服务相关接口
+  title: 书签服务
+  version: "1.0"
+paths:
+  /api/link/list:
+    get:
+      description: 查询书签列表
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Link'
+            type: array
+      summary: 查询书签列表
+      tags:
+      - link
+produces:
+- application/json
+swagger: "2.0"
