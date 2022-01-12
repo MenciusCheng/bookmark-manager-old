@@ -5,7 +5,6 @@ import (
 	"github.com/MenciusCheng/bookmark-manager/bookmark-service/conf"
 	"github.com/MenciusCheng/bookmark-manager/bookmark-service/dao"
 	"github.com/MenciusCheng/bookmark-manager/bookmark-service/manager"
-	"github.com/MenciusCheng/bookmark-manager/bookmark-service/model"
 )
 
 type Service struct {
@@ -39,8 +38,4 @@ func (s *Service) Close() {
 	if s.mgr != nil {
 		s.mgr.Close()
 	}
-}
-
-func (s *Service) GetLinkList(ctx context.Context) (infos []model.Link, err error) {
-	return s.dao.GetLinkList(ctx)
 }

@@ -34,3 +34,8 @@ func (d *Dao) GetLinkList(ctx context.Context) (infos []model.Link, err error) {
 	err = d.db.Master(ctx).Find(&infos).Error
 	return
 }
+
+func (d *Dao) CreateLinkList(ctx context.Context, infos []model.Link) (err error) {
+	err = d.db.Master(ctx).CreateInBatches(&infos, 500).Error
+	return
+}

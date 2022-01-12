@@ -2,6 +2,7 @@ package http
 
 import (
 	"context"
+	"github.com/MenciusCheng/bookmark-manager/bookmark-service/util/ecode"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -36,6 +37,5 @@ func getLinkList(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, err)
 		return
 	}
-	okMsg := map[string]interface{}{"result": resp}
-	c.JSON(http.StatusOK, okMsg)
+	ecode.Success(c, resp)
 }
